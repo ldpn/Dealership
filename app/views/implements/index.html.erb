@@ -1,0 +1,32 @@
+<h1><%= pluralize(@implements.size, 'Implement') %></h1>
+
+<% @implements.each do |implement| %>
+
+<article>
+	<header>
+		<h2><%= link_to(implement.model, implement) %></h2>
+	</header>
+	<p>
+		<%= truncate(implement.description, length:35, separator:' ') %>
+	</p>
+	<table>
+		<tr>
+			<th> Equipment Category: </th>
+			<td><%= implement.equipment_category %></td>
+		</tr>
+		<tr>
+			<th> Horsepower: </th>
+			<td><%= implement.hp %></td>
+		</tr>
+		<tr>
+			<th> List Price: </th>
+			<td><%= number_to_currency(implement.list_price) %></td>
+		</tr>
+		<tr>
+			<th> Special Offers </th>
+			<td><%= format_price(implement) %></td>
+		</tr>
+	</table>	
+</article>
+<% end %>
+	

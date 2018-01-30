@@ -1,0 +1,24 @@
+<article>
+	
+	<header>
+		<h1><%= @implement.model %></h1>
+	</header>
+
+	<p><%= @implement.description %></p>
+
+	<h3> Equipment Category: </h3>
+	<p><%= @implement.equipment_category %></p>
+
+	<h3> Horsepower: </h3>
+	<p><%= @implement.hp %></p>
+
+	<h3> List Price: </h3>
+	<p><%= number_to_currency(@implement.list_price) %></p>
+
+	<h3> Special Offers: </h3>
+	<p><%= format_price(@implement) %></p>
+
+</article>
+
+<%= link_to "All Implements", root_path %>
+
