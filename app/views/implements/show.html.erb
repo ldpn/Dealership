@@ -1,8 +1,10 @@
-<article>
+<article class="implements">
 	
 	<header>
 		<h1><%= @implement.model %></h1>
 	</header>
+
+	<%= image_tag(@implement.image_file_name) %>
 
 	<p><%= @implement.description %></p>
 
@@ -18,7 +20,11 @@
 	<h3> Special Offers: </h3>
 	<p><%= format_price(@implement) %></p>
 
+	<h3> In Stock: </h3>
+	<p><%= @implement.in_stock %></p>
+
 </article>
 
 <%= link_to "All Implements", root_path %>
-
+<%= link_to "Edit", edit_implement_path(@implement) %>
+<%= link_to "Delete", implement_path(@implement), method: :delete, data: {confirm: 'Are you sure?'} %>

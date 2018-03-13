@@ -1,10 +1,13 @@
 <h1><%= pluralize(@implements.size, 'Implement') %></h1>
 
+<%= link_to "Add New Implement", new_implement_path %>
+
 <% @implements.each do |implement| %>
 
-<article>
+<article class="implements">
 	<header>
 		<h2><%= link_to(implement.model, implement) %></h2>
+		<%= image_tag(implement.image_file_name) %>
 	</header>
 	<p>
 		<%= truncate(implement.description, length:35, separator:' ') %>
@@ -26,7 +29,11 @@
 			<th> Special Offers </th>
 			<td><%= format_price(implement) %></td>
 		</tr>
+		<tr>
+			<th> In Stock: </th>
+			<td><%= implement.in_stock %></td>
+		</tr>
 	</table>	
 </article>
-<% end %>
-	
+
+<% end %>	

@@ -10,17 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180127232903) do
+ActiveRecord::Schema.define(version: 20180223015437) do
 
   create_table "implements", force: :cascade do |t|
     t.string   "model"
     t.decimal  "list_price"
     t.decimal  "hp"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.text     "description"
     t.text     "equipment_category"
     t.decimal  "special_offers"
+    t.string   "image_file_name",    default: " "
+    t.integer  "in_stock",           default: 0
   end
 
 end
